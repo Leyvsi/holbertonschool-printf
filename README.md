@@ -8,15 +8,15 @@ The _printf Projet
 - **Sylvie Costa** - *Co-developer*  
   GitHub: https://github.com/Leyvsi/holbertonschool-printf
 
-The _printf function is a simplified recreation of the standard printf function from the C printf library.
-It formats and prints data to the standard output according to a format string.
-This implementation supports a limited set of conversion specifiers.
+_printf is a simpler version of the C library printf function,
+it prints text following the rules of a format string,
+this version only supports a few basic format specifiers.
 
-The goal of this project is to understand:
-howvariadic functions work (va_list, va_start, va_arg, va_end);
-how to parse and process a format string;
-how to print characters, strings and integers manually;
-how recursion can be used to print numbers.
+The goal of this project is to learn :
+how variadic functions work (va_list, va_start, va_arg, va_end), 
+how to read and handle a format string, 
+how to manually print characters, strings, and integers, 
+and how recursion can be used to print numbers.
 
 %c :prints a single character
 %s :prints a string of characters
@@ -26,11 +26,10 @@ how recursion can be used to print numbers.
 
 Prototype : int _printf(char *format, ...);
 
-@_printf : Iterates through the format string,
-when encountering a % character, checks the next character to determine the required conversion,
-retrieves arguments using va_list,
-calls helper functions to print characters, strings, or integers,
-returns the total number of printed characters,
+@_printf : Goes through the format string,
+when it finds a %, it checks the next character to know what to print,
+it gets the matching argument and calls the right function to print it (char, string, number),
+in the end, it returns how many characters were printe
 
 @print_char :prints a single character using write.
 @print_str : prints a null-terminated string character by character.
