@@ -5,7 +5,7 @@
 #include <unistd.h>
 
 /*main _printf function*/
-int _printf(char *format, ...);
+int _printf(const char *format, ...);
 /*character functions*/
 int print_char(int c);
 int print_str(char *str);
