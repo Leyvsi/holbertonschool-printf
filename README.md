@@ -8,7 +8,7 @@ The _printf Projet
 - **Sylvie Costa** - *Co-developer*  
   GitHub: https://github.com/Leyvsi/holbertonschool-printf
 
-The _printf function is a simplified recreation of the standard printf function from the C library.
+The _printf function is a simplified recreation of the standard printf function from the C printf library.
 It formats and prints data to the standard output according to a format string.
 This implementation supports a limited set of conversion specifiers.
 
