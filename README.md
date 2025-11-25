@@ -18,11 +18,11 @@ how to parse and process a format string;
 how to print characters, strings and integers manually;
 how recursion can be used to print numbers.
 
-%c : Prints a single character
-%s : Prints a string of characters
-%d : Prints a signed integer
-%i : Prints a signed integer
-%% : Prints the % character
+%c :prints a single character
+%s :prints a string of characters
+%d :prints a signed integer
+%i :prints a signed integer
+%% :prints the % character
 
 Prototype : int _printf(char *format, ...);
 
