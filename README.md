@@ -19,9 +19,13 @@ how to manually print characters, strings, and integers,
 and how recursion can be used to print numbers.
 
 %c :prints a single character
+
 %s :prints a string of characters
+
 %d :prints a signed integer
+
 %i :prints a signed integer
+
 %% :prints the % character
 
 Prototype : int _printf(char *format, ...);
@@ -32,7 +36,9 @@ it gets the matching argument and calls the right function to print it (char, st
 in the end, it returns how many characters were printe
 
 @print_char :prints a single character using write.
+
 @print_str : prints a null-terminated string character by character.
+
 @print_digit : prints an integer recursively,
 handles negative numbers by printing - and converting the value to positive before recursion.
 
