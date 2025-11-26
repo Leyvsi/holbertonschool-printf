@@ -33,7 +33,7 @@ Prototype : int _printf(char *format, ...);
 @_printf : Goes through the format string,
 when it finds a %, it checks the next character to know what to print,
 it gets the matching argument and calls the right function to print it (char, string, number),
-in the end, it returns how many characters were printe
+in the end, it returns how many characters were printed
 
 @print_char :prints a single character using write.
 
