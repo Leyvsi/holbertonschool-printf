@@ -11,7 +11,5 @@ int print_char(int c);
 int print_str(char *str);
 /*integer functions*/
 int print_digit(int n);
-int print_int(va_list args);
-int print_int_helper(int n);
 
 #endif
