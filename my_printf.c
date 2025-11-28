@@ -1,10 +1,11 @@
 #include "main.h"
 
+
 /**
- * my_printf - simplified printf implementation
- * @format: format string containing directives
+ * _printf - simplified printf
+ * @format: format string
  *
- * Return: total number of printed characters, or -1 on error
+ * Return: number of printed characters, or -1 on error
  */
 int _printf(const char *format, ...)
 {
@@ -20,95 +21,72 @@ int _printf(const char *format, ...)
     {
         if (*format == '%')
         {
-            if (*format == '%') /* print % */
+            format++; /* move to specifier */
+
+            if (*format == '%')
             {
-                putchar('%');
+                write(1, "%", 1);
                 count++;
             }
-            else if (*format == 'c') /* print char */
+            else if (*format == 'c')
             {
                 int ch = va_arg(args, int);
-                putchar(ch);
+                write(1, &ch, 1);
                 count++;
             }
-            else if (*format == 's') /* print string */
+            else if (*format == 's')
             {
                 char *str = va_arg(args, char *);
+
+                if (str == NULL)
+                    str = "(null)";
+
                 while (*str)
                 {
-                    putchar(*str);
+                    write(1, str, 1);
                     str++;
                     count++;
                 }
             }
-            else if (*format == 'd' || *format == 'i') /* print integer */
+            else if (*format == 'd' || *format == 'i')
             {
                 int nbr = va_arg(args, int);
                 count += print_digit(nbr);
             }
-            else /* unknown specifier, print as is */
+            else
             {
-                putchar(*format);
+                /* unknown specifier: print literally */
+                write(1, format, 1);
                 count++;
             }
         }
         else
         {
-            putchar(*format);
+            write(1, format, 1);
             count++;
         }
-        format++;
+
+        format++; /* one increment per loop */
     }
 
     va_end(args);
     return (count);
 }
 
-
 /**
- * print_char - write one character
- * @c: character to write
+ * print_digit - print integer recursively
+ * @nbr: number to print
  *
- * Return: number of written bytes
- */
-int print_char(int c)
-{
-    return write(1, &c, 1);
-}
-
-
-/**
- * print_str - write a string
- * @str: pointer to string
- *
- * Return: number of written characters
- */
-int print_str(char *str)
-{
-    int count = 0;
-
-    while (*str)
-    {
-        count += print_char(*str);
-        str++;
-    }
-    return count;
-}
-
-
-/**
- * print_digit - print an integer recursively
- * @nbr: integer to print
- *
- * Return: number of printed characters
+ * Return: number of printed chars
  */
 int print_digit(int nbr)
 {
     int count = 0;
+    char c;
 
     if (nbr < 0)
     {
-        putchar('-');
+        write(1, "-", 1);
         count++;
         nbr = -nbr;
     }
@@ -116,7 +94,9 @@ int print_digit(int nbr)
     if (nbr / 10)
         count += print_digit(nbr / 10);
 
-    putchar((nbr % 10) + '0');
+    c = (nbr % 10) + '0';
+    write(1, &c, 1);
     count++;
-    return count;
+
+    return (count);
 }
