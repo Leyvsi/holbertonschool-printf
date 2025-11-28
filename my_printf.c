@@ -81,9 +81,11 @@ int _printf(const char *format, ...)
  */
 int print_digit(int nbr)
 {
-    int count = 0;
+    int count;
     unsigned int num;
     char c;
+
+    count = 0;
 
     if (nbr < 0)
     {
@@ -93,10 +95,10 @@ int print_digit(int nbr)
     else
         num = nbr;
 
-    if (n / 10)
+    if (num / 10)
         count += print_digit(num / 10);
 
-    char c = (num % 10) + '0';
+    c = (num % 10) + '0';
     count += write(1, &c, 1);
 
     return count;
