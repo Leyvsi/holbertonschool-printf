@@ -73,6 +73,35 @@ int _printf(const char *format, ...)
     return (count);
 }
 
+
+/**
+ * print_char - write one character
+ * @c: character to write
+ *
+ * Return: number of written bytes
+ */
+int print_char(int c)
+{
+    return write(1, &c, 1);
+}
+
+/**
+ * print_str - write a string
+ * @str: pointer to string
+ *
+ * Return: number of written characters
+ */
+int print_str(char *str)
+{
+    int count = 0;
+    while (*str)
+    {
+        count += print_char(*str);
+        str++;
+    }
+    return count;
+}
+
 /**
  * print_digit - print integer recursively
  * @nbr: number to print
