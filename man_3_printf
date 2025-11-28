@@ -1,6 +1,4 @@
-.\" Manpage for _printf
-.\" Contact: Holberton School
-.TH _PRINTF 3 "28 Nov 2025" "v1.0" "Holberton C Library"
+.TH _PRINTF
 .SH NAME
 _printf \- simplified printf function
 .SH SYNOPSIS
