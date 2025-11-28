@@ -94,9 +94,9 @@ int print_digit(int nbr)
         num = nbr;
 
     if (n / 10)
-        count += print_digit(n / 10);
+        count += print_digit(num / 10);
 
-    char c = (n % 10) + '0';
+    char c = (num % 10) + '0';
     count += write(1, &c, 1);
 
     return count;
