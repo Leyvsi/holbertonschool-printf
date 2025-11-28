@@ -88,7 +88,7 @@ int print_digit(int nbr)
     {
         write(1, "-", 1);
         count++;
-        nbr = -nbr;
+        nbr = -((unsigned int)nbr);
     }
 
     if (nbr / 10)
