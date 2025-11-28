@@ -55,3 +55,8 @@ returns -1 if format is NULL.
 
 <img width="1215" height="1800" alt="Flowchart (1)" src="https://github.com/user-attachments/assets/9ae34fed-17f5-4f67-8a5f-7edc969a3df8" />
 
+Example of _printf :
+<img width="755" height="265" alt="Capture d&#39;écran 2025-11-28 122514" src="https://github.com/user-attachments/assets/26538e3f-d11e-4c80-9f76-d3650dfa1a2a" />
+
+
+
