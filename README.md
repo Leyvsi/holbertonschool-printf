@@ -53,4 +53,5 @@ Compilation : gcc -Wall -Wextra -Werror -pedantic *.c -o printf
 Return value : returns the total number of characters printed, 
 returns -1 if format is NULL.
 
+<img width="1215" height="1800" alt="Flowchart (1)" src="https://github.com/user-attachments/assets/9ae34fed-17f5-4f67-8a5f-7edc969a3df8" />
 
